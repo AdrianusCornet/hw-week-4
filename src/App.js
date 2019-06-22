@@ -29,10 +29,18 @@ const data = [
 ]
 
 class App extends React.Component {
-  
+  makeOptions = (computer) => {
+    return computer.name
+  }
+
   render() {
     return (
       <div className="App">
+        <select>
+          <option value=''>-- Pick a model --</option>
+          {data.map(this.makeOptions)}
+        </select>
+
         <Test val='test val' />
       </div>
     );
