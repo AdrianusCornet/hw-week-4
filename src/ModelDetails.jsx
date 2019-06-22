@@ -12,13 +12,14 @@ export default class ModelDetails extends Component {
   }
 
   render() {
+    const { name,manufacturer, year, origin } = this.props.model
     return (
       <div>
         <ul>
-          <li>Name: {this.props.model.name}</li>
-          <li>Manufacturer: {this.props.model.manufacturer}</li>
-          <li>Year: {this.props.model.year}</li>
-          <li>Origin: {this.props.model.origin}</li>
+          <li>Name: {name}</li>
+          <li>Manufacturer: {manufacturer}</li>
+          <li>Year: {year}</li>
+          <li>Origin: {origin}</li>
         </ul>
       </div>
     )
