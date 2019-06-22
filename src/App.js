@@ -30,10 +30,11 @@ const data = [
 
 class App extends React.Component {
   state = {
-
+    value: ''
   }
 
   updateSelection = (event) => {
+    this.setState({value: event.target.value})
     console.log('change', event.target.value)
   }
 
