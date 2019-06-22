@@ -29,9 +29,9 @@ const data = [
 ]
 
 class App extends React.Component {
-  makeOptions = (computer) => {
+  makeOptions = (computer, index) => {
     return (
-      <option value={computer.name}>{computer.name} ({computer.year})</option>
+      <option key={index} value={computer.name}>{computer.name} ({computer.year})</option>
     )
   }
 
