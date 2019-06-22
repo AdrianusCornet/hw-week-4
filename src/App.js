@@ -30,11 +30,11 @@ const data = [
 
 class App extends React.Component {
   state = {
-    
+
   }
 
   updateSelection = () => {
-    return
+    console.log('change')
   }
 
   makeOptions = (computer, index) => {
@@ -46,7 +46,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <select>
+        <select onChange={this.updateSelection}>
           <option value=''>-- Pick a model --</option>
           {data.map(this.makeOptions)}
         </select>
