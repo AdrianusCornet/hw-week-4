@@ -31,11 +31,15 @@ const data = [
 function App() {
   return (
     <div className="App">
-      
+      <Test />
     </div>
   );
 }
 
-
+class Test extends React.Component {
+  render() {
+    return <h1>test</h1>
+  }
+}
 
 export default App;
