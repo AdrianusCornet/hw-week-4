@@ -31,14 +31,14 @@ const data = [
 function App() {
   return (
     <div className="App">
-      <Test />
+      <Test val='test val'/>
     </div>
   );
 }
 
 class Test extends React.Component {
   render() {
-    return <h1>test</h1>
+    return <h1>{this.props.val}</h1>
   }
 }
 
