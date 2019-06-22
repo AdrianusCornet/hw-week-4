@@ -37,8 +37,11 @@ class App extends React.Component {
     this.setState({ value: event.target.value })
   }
   clickHandeler = (event) => {
-    this.addModel('test')
-    console.log('click')
+    const model = {}
+
+    console.log(data.find(model => {
+      return model.name === this.state.value
+    }))
   }
 
   addModel = (model) =>{
