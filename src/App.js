@@ -76,10 +76,4 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (store) => {
-  return {
-    store
-  }
-}
-
-export default connect(mapStateToProps)(App);
+export default connect()(App);
