@@ -36,6 +36,9 @@ class App extends React.Component {
   updateSelection = (event) => {
     this.setState({ value: event.target.value })
   }
+  clickHandeler = (event) => {
+    console.log('click')
+  }
 
   makeOptions = (computer, index) => {
     return (
@@ -50,7 +53,7 @@ class App extends React.Component {
           <option value=''>-- Pick a model --</option>
           {data.map(this.makeOptions)}
         </select>
-        <button onClick={''}>Add</button>
+        <button onClick={this.clickHandeler}>Add</button>
       </div>
     );
   }
