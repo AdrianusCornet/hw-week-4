@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { connect } from 'react-redux'
 
 const data = [
   {
@@ -44,7 +45,7 @@ class App extends React.Component {
   }
 
   addModel = (model) =>{
-    this.dispach(
+    this.props.dispatch(
       {
         type: 'TEST',
         payload: model
@@ -70,4 +71,10 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = (store) => {
+  return {
+    store
+  }
+}
+
+export default connect(mapStateToProps)(App);
