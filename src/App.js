@@ -33,8 +33,8 @@ class App extends React.Component {
 
   }
 
-  updateSelection = () => {
-    console.log('change')
+  updateSelection = (event) => {
+    console.log('change', event.target.value)
   }
 
   makeOptions = (computer, index) => {
