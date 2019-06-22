@@ -29,6 +29,14 @@ const data = [
 ]
 
 class App extends React.Component {
+  state = {
+    value: ''
+  }
+
+  updateSelection = (event) => {
+    this.setState({ value: event.target.value })
+  }
+
   makeOptions = (computer, index) => {
     return (
       <option key={index} value={computer.name}>{computer.name} ({computer.year})</option>
@@ -37,8 +45,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <select>
+      <div className="App" >
+        <select onChange={this.updateSelection} value={this.state.value}>
           <option value=''>-- Pick a model --</option>
           {data.map(this.makeOptions)}
         </select>
