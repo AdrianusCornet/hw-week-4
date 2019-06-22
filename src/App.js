@@ -37,11 +37,16 @@ class App extends React.Component {
     this.setState({ value: event.target.value })
   }
   clickHandeler = (event) => {
+    this.addModel('test')
     console.log('click')
   }
 
   addModel = (model) =>{
-    this.dispach({ type: 'TEST'})
+    this.dispach(
+      {
+        type: 'TEST',
+        payload: model
+      })
   }
 
   makeOptions = (computer, index) => {
