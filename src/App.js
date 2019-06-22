@@ -33,6 +33,10 @@ class App extends React.Component {
     
   }
 
+  updateSelection = () => {
+    return
+  }
+
   makeOptions = (computer, index) => {
     return (
       <option key={index} value={computer.name}>{computer.name} ({computer.year})</option>
