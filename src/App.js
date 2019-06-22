@@ -40,8 +40,7 @@ class App extends React.Component {
     const model = data.find(model => {
       return model.name === this.state.value
     })
-
-    console.log(model)
+    this.addModel(model)
   }
 
   addModel = (model) =>{
