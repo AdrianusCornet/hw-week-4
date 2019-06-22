@@ -28,12 +28,15 @@ const data = [
   }
 ]
 
-function App() {
-  return (
-    <div className="App">
-      <Test val='test val'/>
-    </div>
-  );
+class App extends React.Component {
+  
+  render() {
+    return (
+      <div className="App">
+        <Test val='test val' />
+      </div>
+    );
+  }
 }
 
 class Test extends React.Component {
