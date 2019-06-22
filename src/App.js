@@ -50,6 +50,7 @@ class App extends React.Component {
           <option value=''>-- Pick a model --</option>
           {data.map(this.makeOptions)}
         </select>
+        <button onClick={''}>Add</button>
       </div>
     );
   }
