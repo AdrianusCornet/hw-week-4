@@ -40,6 +40,10 @@ class App extends React.Component {
     console.log('click')
   }
 
+  addModel = (model) =>{
+    this.dispach({ type: 'TEST'})
+  }
+
   makeOptions = (computer, index) => {
     return (
       <option key={index} value={computer.name}>{computer.name} ({computer.year})</option>
