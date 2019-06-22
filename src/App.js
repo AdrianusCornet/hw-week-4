@@ -42,16 +42,8 @@ class App extends React.Component {
           <option value=''>-- Pick a model --</option>
           {data.map(this.makeOptions)}
         </select>
-
-        <Test val='test val' />
       </div>
     );
-  }
-}
-
-class Test extends React.Component {
-  render() {
-    return <h1>{this.props.val}</h1>
   }
 }
 
