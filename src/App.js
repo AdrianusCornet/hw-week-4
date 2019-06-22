@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { connect } from 'react-redux'
+import RenderModels from './RenderModels'
 
 const data = [
   {
@@ -64,6 +65,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App" >
+        <RenderModels/>
         <select onChange={this.updateSelection} value={this.state.value}>
           <option value=''>-- Pick a model --</option>
           {data.map(this.makeOptions)}
@@ -74,10 +76,4 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (store) => {
-  return {
-    store
-  }
-}
-
-export default connect(mapStateToProps)(App);
+export default connect()(App);
