@@ -31,7 +31,7 @@ const data = [
 class App extends React.Component {
   makeOptions = (computer) => {
     return (
-      <option value={computer.name}>{computer.name}({computer.year})</option>
+      <option value={computer.name}>{computer.name} ({computer.year})</option>
     )
   }
 
