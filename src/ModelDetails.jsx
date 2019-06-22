@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 
 export default class ModelDetails extends Component {
   static propTypes = {
-    model: PropTypes.object.isRequired,
+    model: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      manufacturer: PropTypes.string.isRequired,
+      year: PropTypes.number.isRequired,
+      origin: PropTypes.isRequired
+    })
   }
 
   render() {
