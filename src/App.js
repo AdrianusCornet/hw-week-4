@@ -46,8 +46,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <select onChange={this.updateSelection}>
+      <div className="App" >
+        <select onChange={this.updateSelection} value={this.state.value}>
           <option value=''>-- Pick a model --</option>
           {data.map(this.makeOptions)}
         </select>
