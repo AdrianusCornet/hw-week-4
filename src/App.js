@@ -34,8 +34,7 @@ class App extends React.Component {
   }
 
   updateSelection = (event) => {
-    this.setState({value: event.target.value})
-    console.log('change', event.target.value)
+    this.setState({ value: event.target.value })
   }
 
   makeOptions = (computer, index) => {
