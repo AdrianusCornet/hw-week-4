@@ -44,12 +44,15 @@ class App extends React.Component {
     this.addModel(model)
   }
 
-  addModel = (model) =>{
-    this.props.dispatch(
-      {
-        type: 'TEST',
-        payload: model
-      })
+  addModel = (model) => {
+    if (model) {
+      this.props.dispatch(
+        {
+          type: 'ADD_MODEL',
+          payload: model
+        }
+      )
+    }
   }
 
   makeOptions = (computer, index) => {
