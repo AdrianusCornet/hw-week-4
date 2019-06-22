@@ -30,7 +30,9 @@ const data = [
 
 class App extends React.Component {
   makeOptions = (computer) => {
-    return computer.name
+    return (
+      <option value={computer.name}>{computer.name}({computer.year})</option>
+    )
   }
 
   render() {
