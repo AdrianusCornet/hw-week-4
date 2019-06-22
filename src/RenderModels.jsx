@@ -6,7 +6,7 @@ class RenderModels extends Component {
   render() {
     return (
       <div>
-        {this.props.store.map(model=> <ModelDetails model={model}/>)}
+        {this.props.store.map((model, indx)=> <ModelDetails key={indx} model={model}/>)}
       </div>
     )
   }
