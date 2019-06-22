@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ModelDetails from './ModelDetails'
 
 class RenderModels extends Component {
   render() {
     return (
       <div>
-        <h1>test</h1>
+        {this.props.store.map(a=> <ModelDetails/>)}
       </div>
     )
   }

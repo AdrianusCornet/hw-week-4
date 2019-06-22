@@ -4,7 +4,7 @@ export default class ModelDetails extends Component {
   render() {
     return (
       <div>
-        
+        test
       </div>
     )
   }
