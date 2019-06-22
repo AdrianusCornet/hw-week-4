@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { connect } from 'react-redux'
 
 const data = [
   {
@@ -36,6 +37,23 @@ class App extends React.Component {
   updateSelection = (event) => {
     this.setState({ value: event.target.value })
   }
+  clickHandeler = (event) => {
+    const model = data.find(model => {
+      return model.name === this.state.value
+    })
+    this.addModel(model)
+  }
+
+  addModel = (model) => {
+    if (model) {
+      this.props.dispatch(
+        {
+          type: 'ADD_MODEL',
+          payload: model
+        }
+      )
+    }
+  }
 
   makeOptions = (computer, index) => {
     return (
@@ -50,9 +68,16 @@ class App extends React.Component {
           <option value=''>-- Pick a model --</option>
           {data.map(this.makeOptions)}
         </select>
+        <button onClick={this.clickHandeler}>Add</button>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (store) => {
+  return {
+    store
+  }
+}
+
+export default connect(mapStateToProps)(App);
