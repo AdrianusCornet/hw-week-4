@@ -9,7 +9,9 @@ export default class ModelDetails extends Component {
   render() {
     return (
       <div>
-        test
+        <ul>
+          <li>Name: {this.props.model.name}</li>
+        </ul>
       </div>
     )
   }
