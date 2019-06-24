@@ -1,7 +1,17 @@
 import React from 'react';
 import './App.css';
 import { connect } from 'react-redux'
-import RenderModels from './RenderModels'
+import ModelDetails from './ModelDetails'
+
+function addModel (model) {
+  if (model) {
+    return {
+      type: 'ADD_MODEL',
+      payload: model
+    }
+  }
+}
+
 
 const data = [
   {
@@ -42,18 +52,7 @@ class App extends React.Component {
     const model = data.find(model => {
       return model.name === this.state.value
     })
-    this.addModel(model)
-  }
-
-  addModel = (model) => {
-    if (model) {
-      this.props.dispatch(
-        {
-          type: 'ADD_MODEL',
-          payload: model
-        }
-      )
-    }
+    this.props.addModel(model)
   }
 
   makeOptions = (computer, index) => {
@@ -65,7 +64,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App" >
-        <RenderModels/>
+        <div>
+          {this.props.store.map((model, indx)=> <ModelDetails key={indx} model={model}/>)}
+        </div>
+
         <select onChange={this.updateSelection} value={this.state.value}>
           <option value=''>-- Pick a model --</option>
           {data.map(this.makeOptions)}
@@ -76,4 +78,17 @@ class App extends React.Component {
   }
 }
 
-export default connect()(App);
+const mapStateToProps = (store) => {
+  return {
+    store
+  }
+}
+
+const mapDispatchToProps = {
+  addModel
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
